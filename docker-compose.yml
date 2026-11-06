@@ -1,0 +1,16 @@
+services:
+  site:
+    build: .
+    image: site-tp:1.0
+    container_name: site-nginx
+    ports:
+      - "8080:80"
+    depends_on:
+      - app
+
+  app:
+    build: ./api
+    image: api-tp:1.0
+    container_name: app-api
+    ports:
+      - "8081:3000"

@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TP Final - Docker Compose</title>
+  </head>
+  <body>
+    <h1>TP Final - Docker Compose</h1>
+    <p>Site estático em nginx com imagem customizada</p>
+    <p>Lucas Barros Simon & Osi Paes Junior</p>
+    <h2>Resposta da API:</h2>
+    <pre id="api">carregando...</pre>
+    <script>
+      fetch("http://localhost:8081")
+        .then((r) => r.json())
+        .then((d) => (api.textContent = JSON.stringify(d, null, 2)))
+        .catch(() => (api.textContent = "API offline"));
+    </script>
+  </body>
+</html>
